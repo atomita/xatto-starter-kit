@@ -1,0 +1,115 @@
+{
+  "name": "xatto-starter-kit",
+  "version": "0.0.0",
+  "description": "Starter kit for xatto",
+  "main": "index.js",
+  "scripts": {
+    "dev": "npm run serve",
+    "dev:clean": "npm run serve:clean",
+    "production": "npm run build",
+    "serve": "parcel -p 58080 ./src/index.html",
+    "serve:clean": "rm -rf .cache dist; npm run serve",
+    "build": "parcel build ./src/index.html",
+    "postinstall": "[ -f src/.env ] || cp src/dotenv.example src/.env",
+    "prettier": "prettier",
+    "test": "jest --coverage --no-cache"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/atomita/xatto-starter-kit.git"
+  },
+  "keywords": [
+    "xatto",
+    "starter"
+  ],
+  "author": "atomita",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/atomita/xatto-starter-kit/issues"
+  },
+  "homepage": "https://github.com/atomita/xatto-starter-kit#readme",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "babel": {
+    "env": {
+      "production": {
+        "plugins": [
+          "react-remove-properties"
+        ]
+      }
+    },
+    "plugins": [
+      [
+        "transform-react-jsx",
+        {
+          "pragma": "x"
+        }
+      ],
+      "syntax-object-rest-spread"
+    ],
+    "presets": [
+      [
+        "env",
+        {
+          "targets": {
+            "browsers": [
+              "last 2 versions",
+              "ie 11"
+            ]
+          },
+          "useBuiltIns": true
+        }
+      ],
+      "power-assert"
+    ]
+  },
+  "jest": {
+    "transform": {
+      "^.+\\.jsx?$": "babel-jest"
+    },
+    "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.jsx?$",
+    "moduleFileExtensions": [
+      "js",
+      "jsx",
+      "json",
+      "node"
+    ]
+  },
+  "lint-staged": {
+    "subTaskConcurrency": 1,
+    "linters": {
+      "src/**/*.js{,x}": [
+        "prettier --write",
+        "git add"
+      ]
+    }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "singleQuote": true,
+    "trailingComma": "all",
+    "jsxBracketSameLine": true
+  },
+  "devDependencies": {
+    "babel-plugin-react-remove-properties": "^0.2.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "babel-preset-power-assert": "^2.0.0",
+    "husky": "^0.14.3",
+    "jest": "^23.5.0",
+    "lint-staged": "^7.2.2",
+    "nib": "^1.1.2",
+    "parcel-bundler": "^1.9.7",
+    "power-assert": "^1.6.0",
+    "prettier": "^1.14.2",
+    "stylus": "^0.54.5"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "xatto": "^0.1.14"
+  }
+}
