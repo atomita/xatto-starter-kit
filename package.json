@@ -43,16 +43,16 @@
     },
     "plugins": [
       [
-        "transform-react-jsx",
+        "@babel/plugin-transform-react-jsx",
         {
           "pragma": "x"
         }
       ],
-      "syntax-object-rest-spread"
+      "@babel/plugin-syntax-object-rest-spread"
     ],
     "presets": [
       [
-        "env",
+        "@babel/preset-env",
         {
           "targets": {
             "browsers": [
@@ -60,10 +60,9 @@
               "ie 11"
             ]
           },
-          "useBuiltIns": true
+          "useBuiltIns": "entry"
         }
-      ],
-      "power-assert"
+      ]
     ]
   },
   "jest": {
@@ -94,22 +93,23 @@
     "jsxBracketSameLine": true
   },
   "devDependencies": {
+    "@babel/core": "^7.0.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-transform-react-jsx": "^7.0.0",
+    "@babel/preset-env": "^7.0.0",
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.4.2",
     "babel-plugin-react-remove-properties": "^0.2.5",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-plugin-transform-react-jsx": "^6.24.1",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-power-assert": "^2.0.0",
     "husky": "^0.14.3",
     "jest": "^23.5.0",
     "lint-staged": "^7.2.2",
     "nib": "^1.1.2",
-    "parcel-bundler": "^1.9.7",
-    "power-assert": "^1.6.0",
+    "parcel-bundler": "^1.10.3",
     "prettier": "^1.14.2",
     "stylus": "^0.54.5"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0",
+    "@babel/polyfill": "^7.0.0",
     "xatto": "^0.1.14"
   }
 }
