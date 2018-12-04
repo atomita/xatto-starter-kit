@@ -1,6 +1,6 @@
 {
   "name": "xatto-starter-kit",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Starter kit for xatto",
   "main": "index.js",
   "scripts": {
@@ -110,6 +110,6 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
-    "xatto": "^0.1.14"
+    "xatto": "^1.0.0-rc.1"
   }
 }
