@@ -45,7 +45,8 @@
       [
         "@babel/plugin-transform-react-jsx",
         {
-          "pragma": "x"
+          "pragma": "x",
+          "pragmaFrag": "x"
         }
       ],
       "@babel/plugin-syntax-object-rest-spread"
