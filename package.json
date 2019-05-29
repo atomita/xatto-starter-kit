@@ -116,6 +116,6 @@
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
-    "xatto": "^1.0.0"
+    "xatto": "^1.2.0"
   }
 }
